@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchUsers } from "@/lib/api";
 import { User } from "@/types/user";
 
+
 export default function UsersPage() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
