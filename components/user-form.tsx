@@ -1,4 +1,4 @@
-"use client" // Обязательно для работы с хуками в Next.js
+"use client"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -14,7 +14,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 export function CardDemo() {
-  // 1. Создаем общее состояние для формы
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -50,7 +49,6 @@ export function CardDemo() {
     }
   }
 
-  // Универсальный обработчик изменений в инпутах
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target
     setFormData((prev) => ({ ...prev, [id]: value }))
@@ -64,7 +62,7 @@ export function CardDemo() {
           Enter your details below to create an account
         </CardDescription>
       </CardHeader>
-      <form onSubmit={handleSubmit}> {/* 3. Вешаем обработчик на форму */}
+      <form onSubmit={handleSubmit}>
         <CardContent>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
@@ -74,8 +72,8 @@ export function CardDemo() {
                 type="text"
                 placeholder="John"
                 required
-                value={formData.firstName} // Привязываем значение
-                onChange={handleChange}     // Привязываем изменение
+                value={formData.firstName}
+                onChange={handleChange}
               />
             </div>
             <div className="grid gap-2">
