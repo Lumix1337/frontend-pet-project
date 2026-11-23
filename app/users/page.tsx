@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchUsers } from "@/lib/api";
 import { User } from "@/types/user";
 
+
 export default function UsersPage() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +16,9 @@ export default function UsersPage() {
     });
   }, []);
 
-  if (loading) return <div className="p-10 text-center">Загрузка пользователей...</div>;
+  if (loading) {
+    return <div className="p-10 text-center">Загрузка пользователей...</div>;
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-10">
